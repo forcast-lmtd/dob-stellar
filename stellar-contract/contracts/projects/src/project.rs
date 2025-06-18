@@ -3,6 +3,7 @@ use soroban_sdk::{Env, BytesN, Vec};
 use crate::storage_types::DataKey;
 use crate::storage_types::ProjectData;
 use crate::storage_types::ProjectStatusEnum;
+use crate::storage_types::TrufaScoreValues;
 
 pub fn set_project_status(
     e: &Env,
@@ -83,4 +84,14 @@ pub fn get_projects_statuses_from_vec(
         result.push_back(project_status);
     }
     result
+}
+
+pub fn set_trufa_score(e: &Env, project_hash: &BytesN<32>, score: &TrufaScoreValues) {
+    let key = DataKey::TrufaScore(project_hash.clone());
+    e.storage().instance().set(&key, score);
+}
+
+pub fn get_trufa_score(e: &Env, project_hash: &BytesN<32>) -> TrufaScoreValues {
+    let key = DataKey::TrufaScore(project_hash.clone());
+    e.storage().instance().get(&key).unwrap()
 }

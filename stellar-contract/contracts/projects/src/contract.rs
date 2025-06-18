@@ -3,7 +3,7 @@
 use crate::admin::{read_administrator, write_administrator};
 use crate::whitelist;
 use crate::project;
-use crate::storage_types::{ProjectStatusEnum, ProjectData};
+use crate::storage_types::{ProjectStatusEnum, ProjectData, TrufaScoreValues};
 use crate::storage_types::{INSTANCE_BUMP_AMOUNT, INSTANCE_LIFETIME_THRESHOLD};
 use soroban_sdk::{contract, contractimpl, Address, Env, Vec, BytesN};
 
@@ -104,7 +104,7 @@ impl Projects {
         );
     }
 
-    pub fn set_project_approved(e: Env, from: Address,project_hash: BytesN<32>) {
+    pub fn set_project_approved(e: Env, from: Address, project_hash: BytesN<32>, trufa_score_values: TrufaScoreValues) {
         // check authorization
         from.require_auth();
 
@@ -127,6 +127,10 @@ impl Projects {
         }
         // set the project status to approved
         project::set_project_status(&e, &project_hash, &ProjectStatusEnum::Approved);
+
+        // set the project trufa score values
+        project::set_trufa_score(&e, &project_hash, &trufa_score_values);
+
         // emit event
         e.events().publish(
             ("project", "approved"),
@@ -243,4 +247,18 @@ impl Projects {
         );
     }
 
+    pub fn get_trufa_score(e: Env, project_hash: BytesN<32>) -> TrufaScoreValues {
+        // check that project was approved
+        let status = project::get_project_status(&e, &project_hash);
+        if status != ProjectStatusEnum::Approved {
+            // throw an error
+            panic!("Project is not approved");
+        }
+        // extend the instance lifetime
+        e.storage()
+            .instance()
+            .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
+
+        project::get_trufa_score(&e, &project_hash)
+    }
 }

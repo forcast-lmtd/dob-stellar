@@ -9,6 +9,17 @@ pub struct ProjectData {
     pub hash: BytesN<32>,
     pub status: ProjectStatusEnum,
 }
+
+#[derive(Clone, Debug, PartialEq, Eq)]
+#[contracttype]
+pub struct TrufaScoreValues {
+    pub technical_feasibility: u32,
+    pub regulatory_compliance: u32,
+    pub financial_viability: u32,
+    pub environment_impact: u32,
+    pub overall_trufa_score: u32
+}
+
 #[derive(Clone, PartialEq, Debug)]
 #[contracttype]
 pub enum ProjectStatusEnum {
@@ -26,4 +37,5 @@ pub enum DataKey {
     ProjectStatus(BytesN<32>),
     ProjectIndex(u32),
     ProjectIndexLength,
+    TrufaScore(BytesN<32>)
 }
