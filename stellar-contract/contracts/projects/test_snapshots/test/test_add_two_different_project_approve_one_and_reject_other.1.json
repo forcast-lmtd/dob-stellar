@@ -87,6 +87,50 @@
                 },
                 {
                   "bytes": "0202020202020202020202020202020202020202020202020202020202020202"
+                },
+                {
+                  "map": [
+                    {
+                      "key": {
+                        "symbol": "environment_impact"
+                      },
+                      "val": {
+                        "u32": 40
+                      }
+                    },
+                    {
+                      "key": {
+                        "symbol": "financial_viability"
+                      },
+                      "val": {
+                        "u32": 50
+                      }
+                    },
+                    {
+                      "key": {
+                        "symbol": "overall_trufa_score"
+                      },
+                      "val": {
+                        "u32": 40
+                      }
+                    },
+                    {
+                      "key": {
+                        "symbol": "regulatory_compliance"
+                      },
+                      "val": {
+                        "u32": 40
+                      }
+                    },
+                    {
+                      "key": {
+                        "symbol": "technical_feasibility"
+                      },
+                      "val": {
+                        "u32": 30
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -351,6 +395,62 @@
                           "vec": [
                             {
                               "symbol": "Approved"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "TrufaScore"
+                            },
+                            {
+                              "bytes": "0202020202020202020202020202020202020202020202020202020202020202"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "environment_impact"
+                              },
+                              "val": {
+                                "u32": 40
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "financial_viability"
+                              },
+                              "val": {
+                                "u32": 50
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "overall_trufa_score"
+                              },
+                              "val": {
+                                "u32": 40
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "regulatory_compliance"
+                              },
+                              "val": {
+                                "u32": 40
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "technical_feasibility"
+                              },
+                              "val": {
+                                "u32": 30
+                              }
                             }
                           ]
                         }

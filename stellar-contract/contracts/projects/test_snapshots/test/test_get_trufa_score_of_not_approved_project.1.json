@@ -5,7 +5,6 @@
   },
   "auth": [
     [],
-    [],
     [
       [
         "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM",
@@ -28,74 +27,6 @@
         }
       ]
     ],
-    [],
-    [
-      [
-        "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5",
-        {
-          "function": {
-            "contract_fn": {
-              "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXI7N",
-              "function_name": "set_project_approved",
-              "args": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5"
-                },
-                {
-                  "bytes": "0101010101010101010101010101010101010101010101010101010101010101"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "environment_impact"
-                      },
-                      "val": {
-                        "u32": 75
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "financial_viability"
-                      },
-                      "val": {
-                        "u32": 80
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "overall_trufa_score"
-                      },
-                      "val": {
-                        "u32": 75
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "regulatory_compliance"
-                      },
-                      "val": {
-                        "u32": 75
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "technical_feasibility"
-                      },
-                      "val": {
-                        "u32": 70
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "sub_invocations": []
-        }
-      ]
-    ],
-    [],
     []
   ],
   "ledger": {
@@ -130,39 +61,6 @@
                 "key": {
                   "ledger_key_nonce": {
                     "nonce": 801925984706572462
-                  }
-                },
-                "durability": "temporary",
-                "val": "void"
-              }
-            },
-            "ext": "v0"
-          },
-          6311999
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5",
-            "key": {
-              "ledger_key_nonce": {
-                "nonce": 5541220902715666415
-              }
-            },
-            "durability": "temporary"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5",
-                "key": {
-                  "ledger_key_nonce": {
-                    "nonce": 5541220902715666415
                   }
                 },
                 "durability": "temporary",
@@ -250,63 +148,7 @@
                         "val": {
                           "vec": [
                             {
-                              "symbol": "Approved"
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
-                              "symbol": "TrufaScore"
-                            },
-                            {
-                              "bytes": "0101010101010101010101010101010101010101010101010101010101010101"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "map": [
-                            {
-                              "key": {
-                                "symbol": "environment_impact"
-                              },
-                              "val": {
-                                "u32": 75
-                              }
-                            },
-                            {
-                              "key": {
-                                "symbol": "financial_viability"
-                              },
-                              "val": {
-                                "u32": 80
-                              }
-                            },
-                            {
-                              "key": {
-                                "symbol": "overall_trufa_score"
-                              },
-                              "val": {
-                                "u32": 75
-                              }
-                            },
-                            {
-                              "key": {
-                                "symbol": "regulatory_compliance"
-                              },
-                              "val": {
-                                "u32": 75
-                              }
-                            },
-                            {
-                              "key": {
-                                "symbol": "technical_feasibility"
-                              },
-                              "val": {
-                                "u32": 70
-                              }
+                              "symbol": "Pending"
                             }
                           ]
                         }
